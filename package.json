@@ -1,0 +1,44 @@
+{
+  "name": "emailemotionsfrontend",
+  "version": "1.0.0",
+  "description": "Email emotions frontend",
+  "main": "index.js",
+  "scripts": {
+    "serve": "cd public && http-server -a localhost -p 8085"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmailsEmotions/EE_frontend.git"
+  },
+  "keywords": [
+    "email",
+    "emotions",
+    "formality"
+  ],
+  "author": "EmailEmotions Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EmailsEmotions/EE_frontend/issues"
+  },
+  "homepage": "https://github.com/EmailsEmotions/EE_frontend#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.5",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "gulp": "^4.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^6.0.0",
+    "spdy": "^4.0.2",
+    "tsify": "^5.0.4",
+    "typescript": "^4.3.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
