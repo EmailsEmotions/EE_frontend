@@ -1,0 +1,44 @@
+#main > header {
+    position: relative;
+    width: 100%;
+    height: $headerHeight;
+    overflow: hidden;
+    box-shadow: 4px 2px 15px 1px #ccc;
+    display: flex;
+
+    .header-left {}
+
+    .header-filler {
+        flex: 1 1;
+    }
+
+    .header-right {}
+
+    .header-post {
+        height: 100%;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            background: #eee;
+        }
+
+        &:active {
+            background: #e3e3e3;
+        }
+
+        > img {
+            width: 24px;
+            height: 24px;
+            max-height: 90%;
+            margin-right: 5px;
+        }
+
+        > span {
+            margin-bottom: 2px;
+        }
+    }
+}

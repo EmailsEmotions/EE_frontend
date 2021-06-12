@@ -1,8 +1,17 @@
+@import 'common/common';
+
 * {
     margin: 0;
     padding: 0;
 }
 
-h1 {
-    color: #ff0000;
+p, span, h1, h2, h3, h4, h5 {
+    font-family: $fontFamily;
 }
+
+$sidebarWidth: 260px;
+$headerHeight: 50px;
+$footerHeight: 30px;
+
+@import 'index/sidebar/sidebar';
+@import 'index/main/main';
