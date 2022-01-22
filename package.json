@@ -42,6 +42,7 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "@babel/core": "^7.16.12",
     "http-server": "^0.12.3"
   }
 }
