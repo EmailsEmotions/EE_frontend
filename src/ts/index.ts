@@ -2,6 +2,7 @@ import { FormalityResult } from './interfaces/FormalityResult';
 import { EmotionsResult } from './interfaces/EmotionsResult';
 import { FormalityResultManager } from './model/FormalityResultManager';
 import { EmotionsResultManager } from './model/EmotionsResultManager';
+import { logout } from './utils';
 
 const Section = ['dashboard', 'history'];
 
@@ -104,6 +105,8 @@ class HistorySection {
               .getElementById('history-content-formality')
               .appendChild(el);
           }
+        } else if (xhr.status === 401) {
+          logout(user.token);
         } else if (xhr.status === 500) {
           this.setError(true);
         } else {
@@ -146,6 +149,8 @@ class HistorySection {
             this.handleReviewFromUrl('emotions', obj);
             document.getElementById('history-content-emotions').appendChild(el);
           }
+        } else if (xhr.status === 401) {
+          logout(user.token);
         } else if (xhr.status === 500) {
           this.setError(true);
         } else {
@@ -219,4 +224,8 @@ window.onload = () => {
   if (type !== null && id !== null) {
     historySection.setUpReviewFromUrl(type, parseInt(id, 10));
   }
+
+  document.getElementById('logout').addEventListener('click', () => {
+    logout(user.token);
+  });
 };

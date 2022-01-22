@@ -1,5 +1,6 @@
 import { EmotionsResult } from '../interfaces/EmotionsResult';
 import { TextResult } from '../interfaces/TextResult';
+import { logout } from '../utils';
 
 export class EmotionsResultManager {
   private expanded = false;
@@ -207,6 +208,8 @@ export class EmotionsResultManager {
           } catch (e) {
             this.setError(true, 'Unable to interpret server response');
           }
+        } else if (xhr.status === 401) {
+          logout(this.user.token);
         } else if (xhr.status === 500) {
           this.setError(true);
         } else {
@@ -263,6 +266,8 @@ export class EmotionsResultManager {
 
         if (xhr.status == 200 || xhr.status == 201) {
           this.evaluateEl.removeAttribute('name');
+        } else if (xhr.status === 401) {
+          logout(this.user.token);
         } else if (xhr.status === 500) {
           this.setError(true);
         } else {
