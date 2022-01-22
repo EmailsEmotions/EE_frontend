@@ -1,0 +1,11 @@
+#main {
+    position: relative;
+    width: calc(100% - #{$sidebarWidth});
+    height: 100vh;
+    float: left;
+    z-index: 1;
+}
+
+@import 'header';
+@import 'content';
+@import 'footer';

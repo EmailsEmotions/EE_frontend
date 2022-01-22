@@ -4,7 +4,10 @@
   "description": "Email emotions frontend",
   "main": "index.js",
   "scripts": {
-    "serve": "cd public && http-server -a localhost -p 8085"
+    "srv": "cd public && http-server -a localhost -p 8081",
+    "dev": "gulp dev",
+    "watch": "gulp watch",
+    "prod": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -39,6 +42,7 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "@babel/core": "^7.16.12",
     "http-server": "^0.12.3"
   }
 }

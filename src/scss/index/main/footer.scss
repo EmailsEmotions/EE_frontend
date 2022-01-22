@@ -1,0 +1,20 @@
+#main > footer {
+    width: 100%;
+    height: $footerHeight;
+    box-shadow: 4px -2px 15px 1px #ccc;
+    display: flex;
+    align-items: center;
+
+    .footer-left {}
+
+    .footer-filler {
+        flex: 1 1;
+    }
+
+    .footer-right {}
+
+    .footer-info {
+        margin: 0 10px;
+        font-size: 0.8rem;
+    }
+}

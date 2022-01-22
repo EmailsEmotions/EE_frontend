@@ -1,0 +1,67 @@
+@import 'colors';
+@import 'fonts';
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+.loading {
+    width: 50px;
+    height: 50px;
+    border:solid 2px #ccc;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-radius: 50%;
+    animation: rotate 1.2s ease-in-out 0s infinite forwards;
+}
+
+.error {
+    width: 100%;
+    text-align: center;
+    color: #ff0000;
+    font-size: 0.8rem;
+    display: block;
+}
+
+.error-container,
+.loading-container {
+    width: 100%;
+    margin: 10px 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    &[name="shown"] {
+        display: flex;
+    }
+}
+
+.btn {
+    padding: 8px 12px;
+    border:none;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: $baseColor;
+    color: #fff;
+
+    &:hover {
+        background: rgba($color: $baseColor, $alpha: 0.85);
+    }
+
+    &:active {
+        background: rgba($color: $baseColor, $alpha: 0.6);
+    }
+}
+
+.btn-secondary {
+    color: #999;
+}
