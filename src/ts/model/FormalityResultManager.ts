@@ -135,15 +135,15 @@ export class FormalityResultManager {
 
           text = document.createElement('span');
           const tmp = this.result as any;
-          text.innerHTML = `${tmp[field.name] * 100}%`;
+          text.innerHTML = `${tmp[field.name] * 50}%`;
           container.appendChild(text);
 
           container = document.createElement('div');
           container.classList.add('history-results-col-review');
           col.appendChild(container);
 
-          for (let i = 0; i < 10; i++) {
-            const value = i + 1;
+          for (let i = 1; i < 4; i++) {
+            const value = i;
             const button = document.createElement('button');
             button.innerHTML = value.toString();
             button.addEventListener('click', () => {
@@ -221,9 +221,12 @@ export class FormalityResultManager {
     if (this.formalityValue === null || this.informalityValue === null) {
       return;
     }
+    // Process formality to API
+    this.formalityValue = this.formalityValue - 1;
+    this.informalityValue = this.informalityValue - 1;
 
     const textId = this.result.textId;
-    const userId = 1;
+    const userId = this.user.id;
 
     const body = JSON.stringify({
       textId,

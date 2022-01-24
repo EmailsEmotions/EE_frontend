@@ -140,15 +140,15 @@ export class EmotionsResultManager {
 
             text = document.createElement('span');
             const tmp = this.result as any;
-            text.innerHTML = `${tmp[field] * 100}%`;
+            text.innerHTML = `${tmp[field] * 50}%`;
             container.appendChild(text);
 
             container = document.createElement('div');
             container.classList.add('history-results-col-review');
             col.appendChild(container);
 
-            for (let i = 0; i < 10; i++) {
-              const value = i + 1;
+            for (let i = 1; i < 4; i++) {
+              const value = i;
               const button = document.createElement('button');
               button.innerHTML = value.toString();
               button.addEventListener('click', () => {
@@ -237,7 +237,13 @@ export class EmotionsResultManager {
     }
 
     const textId = this.result.textId;
-    const userId = 1;
+    const userId = this.user.id;
+
+    this.sadValue = this.sadValue - 1;
+    this.fearValue = this.fearValue - 1;
+    this.happyValue = this.happyValue - 1;
+    this.angryValue = this.angryValue - 1;
+    this.surpriseValue = this.surpriseValue - 1;
 
     const body = JSON.stringify({
       textId,
